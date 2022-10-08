@@ -57,5 +57,3 @@ In this case the final line indicates that a device is created at `/dev/ttyUSB0`
 root@pi:~# ls -la /dev/ttyUSB0
 crw-rw---- 1 root dialout 188, 0 Oct 18 05:09 /dev/ttyUSB0
 ```
-
-The default serial configuration from `.env.dist` should work for this set up.
