@@ -32,21 +32,21 @@ There are two request message types:
 A query request consists of:
 
 ```
-TLAAAACC
+TTLLAAAACCCC
 ```
 
 where:
 
- * T is the message type - `Q` for Query.
- * L is a byte indicating the number (length) of 2 byte words to return (0x00 will return 1 word).
- * AAAA is a little endian word address (shifting the address by 1 shifts by 2 bytes).
- * CC is a Cyclic Redundancy Check.
+ * `TT` is the message type - `Q` for Query.
+ * `LL` is a byte indicating the number (length) of 2 byte words to return (`0x00` will return 1 word).
+ * `AAAA` is a little endian word address (shifting the address by 1 shifts by 2 bytes).
+ * `CCCC` is a Cyclic Redundancy Check.
 
 A query response consists of:
 
  * `TLAAAACC` the exact bytes from the query (including CRC).
  * `MM` the requested memory (the number of 2 byte words specified by L + 1).
- * `CC` CRC of the query + memory.
+ * `CCCC` CRC of the query + memory.
 
 It's possible to request between 2-512 bytes of memory, 
 
@@ -55,16 +55,16 @@ It's possible to request between 2-512 bytes of memory,
 A write request consists of:
 
 ```
-TLAAAACCDDCC
+TTLLAAAACCDDDDCCCC
 ```
 
 where:
 
- * T is the message type - `W` for Write.
- * L is a byte indicating the number (length) of words to be written.
- * AAAA is a little endian word address (shifting the address by 1 shifts by 2 bytes).
- * CC is a Cyclic Redundancy Check (everything to the left).
- * DD is the data to write, between 1 and 256 words (as specified by L + 1).
+ * `TT` is the message type - `W` for Write.
+ * `LL` is a byte indicating the number (length) of words to be written.
+ * `AAAA` is a little endian word address (shifting the address by 1 shifts by 2 bytes).
+ * `CCCC` is a Cyclic Redundancy Check (everything to the left).
+ * `DDDD` is the data to write, between 1 and 256 words (as specified by L + 1).
 
 ## Example Messages
 
