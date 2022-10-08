@@ -55,7 +55,7 @@ It's possible to request between 2-512 bytes of memory,
 A write request consists of:
 
 ```
-TTLLAAAACCDDDDCCCC
+TTLLAAAACCCCDDDDCCCC
 ```
 
 where:
