@@ -37,7 +37,7 @@ TTLLAAAACCCC
 
 where:
 
- * `TT` is the message type - `Q` for Query.
+ * `TT` is the message type - `Q` or `0x51` for Query.
  * `LL` is a byte indicating the number (length) of 2 byte words to return (`0x00` will return 1 word).
  * `AAAA` is a little endian word address (shifting the address by 1 shifts by 2 bytes).
  * `CCCC` is a Cyclic Redundancy Check.
@@ -60,7 +60,7 @@ TTLLAAAACCDDDDCCCC
 
 where:
 
- * `TT` is the message type - `W` for Write.
+ * `TT` is the message type - `W` or `0x57` for Write.
  * `LL` is a byte indicating the number (length) of words to be written.
  * `AAAA` is a little endian word address (shifting the address by 1 shifts by 2 bytes).
  * `CCCC` is a Cyclic Redundancy Check (everything to the left).
