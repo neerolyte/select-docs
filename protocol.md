@@ -70,7 +70,7 @@ where:
 
 ### Hello
 
-Prior to authentication SP LINK sends a request for 0 words from `0xa000` and the SP Pro will respond with the appropriate CRC calculation.
+Prior to authentication SP LINK sends a request for 1 word from `0xa000` and the SP Pro will respond with the memory + CRC calculation.
 
 E.g:
 
